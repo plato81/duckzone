@@ -7,7 +7,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 // Here we load the config.json file that contains our token and our prefix values. 
-const config = require("./config.json");
+//const config = require("./config.json");
 // config.token contains the bot's token
 // config.prefix contains the message prefix.
 
@@ -36,9 +36,9 @@ client.on("message", async message => {
   
   if(message.author.bot) return;
   
-  if(message.content.indexOf(config.prefix) !== 0) return;
+  if(message.content.indexOf((process.env.Prefix) !== 0) return;
   
-  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+  const args = message.content.slice((process.env.Prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
   
